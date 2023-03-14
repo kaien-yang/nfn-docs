@@ -243,7 +243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.common/#nfn.common.NetworkSpec" class="md-nav__link">
+      <a href="/nfn-docs/nfn.common/#nfn.common.NetworkSpec" class="md-nav__link">
         NetworkSpec
       </a>
     </li>
@@ -257,7 +257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.common/#nfn.common.WeightSpaceFeatures" class="md-nav__link">
+      <a href="/nfn-docs/nfn.common/#nfn.common.WeightSpaceFeatures" class="md-nav__link">
         WeightSpaceFeatures
       </a>
     </li>
@@ -271,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.common/#nfn.common.state_dict_to_tensors" class="md-nav__link">
+      <a href="/nfn-docs/nfn.common/#nfn.common.state_dict_to_tensors" class="md-nav__link">
         state_dict_to_tensors()
       </a>
     </li>
@@ -285,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.common/#nfn.common.params_to_state_dicts" class="md-nav__link">
+      <a href="/nfn-docs/nfn.common/#nfn.common.params_to_state_dicts" class="md-nav__link">
         params_to_state_dicts()
       </a>
     </li>
@@ -299,7 +299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.common/#nfn.common.network_spec_from_wsfeat" class="md-nav__link">
+      <a href="/nfn-docs/nfn.common/#nfn.common.network_spec_from_wsfeat" class="md-nav__link">
         network_spec_from_wsfeat()
       </a>
     </li>
@@ -352,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.layers/#nfn.layers.NPPool" class="md-nav__link">
+      <a href="/nfn-docs/nfn.layers/#nfn.layers.NPPool" class="md-nav__link">
         NPPool
       </a>
     </li>
@@ -366,7 +366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.layers/#nfn.layers.HNPPool" class="md-nav__link">
+      <a href="/nfn-docs/nfn.layers/#nfn.layers.HNPPool" class="md-nav__link">
         HNPPool
       </a>
     </li>
@@ -380,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.layers/#nfn.layers.Pointwise" class="md-nav__link">
+      <a href="/nfn-docs/nfn.layers/#nfn.layers.Pointwise" class="md-nav__link">
         Pointwise
       </a>
     </li>
@@ -394,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.layers/#nfn.layers.NPLinear" class="md-nav__link">
+      <a href="/nfn-docs/nfn.layers/#nfn.layers.NPLinear" class="md-nav__link">
         NPLinear
       </a>
     </li>
@@ -408,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nfn.layers/#nfn.layers.HNPLinear" class="md-nav__link">
+      <a href="/nfn-docs/nfn.layers/#nfn.layers.HNPLinear" class="md-nav__link">
         HNPLinear
       </a>
     </li>
@@ -522,8 +522,8 @@ If you want to edit source or run examples, clone the repository locally. Then r
 </code></pre></div></p>
 <h2 id="usage">Usage</h2>
 <h3 id="loading-weights-as-input">Loading weights as input</h3>
-<p>NF-Layers operate on <a href="/nfn.common/#nfn.common.WeightSpaceFeatures"><code>WeightSpaceFeatures</code></a>. The current NF-Layers are compatible with the weight spaces of simple feedforward MLPs and 2D (image) CNNs. For weight spaces of CNN classifiers we assume there is some global pooling layer (e.g., <code>nn.AdaptiveAvgPool2d(1)</code>) between the convolution and FC layers. Supporting 1D or 3D CNNs should be possible but is not currently implemented.</p>
-<p>To construct <a href="/nfn.common/#nfn.commonWeightSpaceFeatures"><code>WeightSpaceFeatures</code></a> from the weights of a Pytorch model, we provide the helper function <a href="/nfn.common/#nfn.common.state_dict_to_tensors"><code>state_dict_to_tensors()</code></a>:
+<p>NF-Layers operate on <a href="/nfn-docs/nfn.common/#nfn.common.WeightSpaceFeatures"><code>WeightSpaceFeatures</code></a>. The current NF-Layers are compatible with the weight spaces of simple feedforward MLPs and 2D (image) CNNs. For weight spaces of CNN classifiers we assume there is some global pooling layer (e.g., <code>nn.AdaptiveAvgPool2d(1)</code>) between the convolution and FC layers. Supporting 1D or 3D CNNs should be possible but is not currently implemented.</p>
+<p>To construct <a href="/nfn-docs/nfn.common/#nfn.commonWeightSpaceFeatures"><code>WeightSpaceFeatures</code></a> from the weights of a Pytorch model, we provide the helper function <a href="/nfn-docs/nfn.common/#nfn.common.state_dict_to_tensors"><code>state_dict_to_tensors()</code></a>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">nfn.common</span> <span class="kn">import</span> <span class="n">state_dict_to_tensors</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>  <span class="c1"># batch of pytorch models</span>
@@ -535,9 +535,9 @@ If you want to edit source or run examples, clone the repository locally. Then r
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">out</span> <span class="o">=</span> <span class="n">nfn</span><span class="p">(</span><span class="n">wsfeat</span><span class="p">)</span>  <span class="c1"># NFN can now ingest WeightSpaceFeatures</span>
 </code></pre></div>
-For now, <a href="/nfn.common/#nfn.common.state_dict_to_tensors"><code>state_dict_to_tensors()</code></a> assumes that the <code>state_dict</code> is an ordered dictionary with keys in order <code>[weight1, bias1, ..., weightL, biasL]</code>. This is the default behavior if the <code>state_dict</code> is coming from a feedforward network that is an <code>nn.Sequential</code> model.</p>
+For now, <a href="/nfn-docs/nfn.common/#nfn.common.state_dict_to_tensors"><code>state_dict_to_tensors()</code></a> assumes that the <code>state_dict</code> is an ordered dictionary with keys in order <code>[weight1, bias1, ..., weightL, biasL]</code>. This is the default behavior if the <code>state_dict</code> is coming from a feedforward network that is an <code>nn.Sequential</code> model.</p>
 <h3 id="building-nfns">Building NFNs</h3>
-<p>The NF-Layers are found in <code>nfn.layers</code>. The main data you need to build an NFN is a <code>network_spec</code>, which specifies the structure of the weight space you plan to process. If you already have a <a href="/nfn.common/#nfn.commonWeightSpaceFeatures"><code>WeightSpaceFeatures</code></a> object as above, you can use <a href="/nfn.common/#nfn.common.network_spec_from_wsfeat"><code>network_spec_from_wsfeat</code></a>.</p>
+<p>The NF-Layers are found in <code>nfn.layers</code>. The main data you need to build an NFN is a <code>network_spec</code>, which specifies the structure of the weight space you plan to process. If you already have a <a href="/nfn-docs/nfn.common/#nfn.commonWeightSpaceFeatures"><code>WeightSpaceFeatures</code></a> object as above, you can use <a href="/nfn-docs/nfn.common/#nfn.common.network_spec_from_wsfeat"><code>network_spec_from_wsfeat</code></a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">nfn</span> <span class="kn">import</span> <span class="n">layers</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">from</span> <span class="nn">nfn.common</span> <span class="kn">import</span> <span class="n">network_spec_from_wsfeat</span>
