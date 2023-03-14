@@ -1,0 +1,40 @@
+site_name: Neural Functional Networks
+
+plugins:
+  - mkdocstrings
+  - search
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+  palette:
+    primary: blue
+
+nav:
+  - nfn.common:
+    - NetworkSpec: /nfn.common/#nfn.common.NetworkSpec
+    - WeightSpaceFeatures: /nfn.common/#nfn.common.WeightSpaceFeatures
+    - state_dict_to_tensors(): /nfn.common/#nfn.common.state_dict_to_tensors
+    - params_to_state_dicts(): /nfn.common/#nfn.common.params_to_state_dicts
+    - network_spec_from_wsfeat(): /nfn.common/#nfn.common.network_spec_from_wsfeat
+  - nfn.layers:
+    - NPPool: /nfn.layers/#nfn.layers.NPPool
+    - HNPPool: /nfn.layers/#nfn.layers.HNPPool
+    - Pointwise: /nfn.layers/#nfn.layers.Pointwise
+    - NPLinear: /nfn.layers/#nfn.layers.NPLinear
+    - HNPLinear: /nfn.layers/#nfn.layers.HNPLinear
+
+
+repo_url: https://github.com/AllanYangZhou/nfn/
+
+markdown_extensions:
+  - markdown_katex:
+      no_inline_svg: True
+      insert_fonts_css: True
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
