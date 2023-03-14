@@ -20,9 +20,9 @@ pip install -e .  # installs in editable mode
 ## Usage
 
 ### Loading weights as input
-NF-Layers operate on [`WeightSpaceFeatures`](/nfn.common/#nfn.common.WeightSpaceFeatures). The current NF-Layers are compatible with the weight spaces of simple feedforward MLPs and 2D (image) CNNs. For weight spaces of CNN classifiers we assume there is some global pooling layer (e.g., `nn.AdaptiveAvgPool2d(1)`) between the convolution and FC layers. Supporting 1D or 3D CNNs should be possible but is not currently implemented.
+NF-Layers operate on [`WeightSpaceFeatures`](/nfn-docs/nfn.common/#nfn.common.WeightSpaceFeatures). The current NF-Layers are compatible with the weight spaces of simple feedforward MLPs and 2D (image) CNNs. For weight spaces of CNN classifiers we assume there is some global pooling layer (e.g., `nn.AdaptiveAvgPool2d(1)`) between the convolution and FC layers. Supporting 1D or 3D CNNs should be possible but is not currently implemented.
 
-To construct [`WeightSpaceFeatures`](/nfn.common/#nfn.commonWeightSpaceFeatures) from the weights of a Pytorch model, we provide the helper function [`state_dict_to_tensors()`](/nfn.common/#nfn.common.state_dict_to_tensors):
+To construct [`WeightSpaceFeatures`](/nfn-docs/nfn.common/#nfn.commonWeightSpaceFeatures) from the weights of a Pytorch model, we provide the helper function [`state_dict_to_tensors()`](/nfn-docs/nfn.common/#nfn.common.state_dict_to_tensors):
 ```python
 from nfn.common import state_dict_to_tensors
 
@@ -35,10 +35,10 @@ wsfeat = WeightSpaceFeatures(*wts_and_bs)
 
 out = nfn(wsfeat)  # NFN can now ingest WeightSpaceFeatures
 ```
-For now, [`state_dict_to_tensors()`](/nfn.common/#nfn.common.state_dict_to_tensors) assumes that the `state_dict` is an ordered dictionary with keys in order `[weight1, bias1, ..., weightL, biasL]`. This is the default behavior if the `state_dict` is coming from a feedforward network that is an `nn.Sequential` model.
+For now, [`state_dict_to_tensors()`](/nfn-docs/nfn.common/#nfn.common.state_dict_to_tensors) assumes that the `state_dict` is an ordered dictionary with keys in order `[weight1, bias1, ..., weightL, biasL]`. This is the default behavior if the `state_dict` is coming from a feedforward network that is an `nn.Sequential` model.
 
 ### Building NFNs
-The NF-Layers are found in `nfn.layers`. The main data you need to build an NFN is a `network_spec`, which specifies the structure of the weight space you plan to process. If you already have a [`WeightSpaceFeatures`](/nfn.common/#nfn.commonWeightSpaceFeatures) object as above, you can use [`network_spec_from_wsfeat`](/nfn.common/#nfn.common.network_spec_from_wsfeat).
+The NF-Layers are found in `nfn.layers`. The main data you need to build an NFN is a `network_spec`, which specifies the structure of the weight space you plan to process. If you already have a [`WeightSpaceFeatures`](/nfn-docs/nfn.common/#nfn.commonWeightSpaceFeatures) object as above, you can use [`network_spec_from_wsfeat`](/nfn-docs/nfn.common/#nfn.common.network_spec_from_wsfeat).
 
 ```python
 from torch import nn

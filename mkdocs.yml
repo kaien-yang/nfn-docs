@@ -16,17 +16,17 @@ theme:
 
 nav:
   - nfn.common:
-    - NetworkSpec: /nfn.common/#nfn.common.NetworkSpec
-    - WeightSpaceFeatures: /nfn.common/#nfn.common.WeightSpaceFeatures
-    - state_dict_to_tensors(): /nfn.common/#nfn.common.state_dict_to_tensors
-    - params_to_state_dicts(): /nfn.common/#nfn.common.params_to_state_dicts
-    - network_spec_from_wsfeat(): /nfn.common/#nfn.common.network_spec_from_wsfeat
+    - NetworkSpec: /nfn-docs/nfn.common/#nfn.common.NetworkSpec
+    - WeightSpaceFeatures: /nfn-docs/nfn.common/#nfn.common.WeightSpaceFeatures
+    - state_dict_to_tensors(): /nfn-docs/nfn.common/#nfn.common.state_dict_to_tensors
+    - params_to_state_dicts(): /nfn-docs/nfn.common/#nfn.common.params_to_state_dicts
+    - network_spec_from_wsfeat(): /nfn-docs/nfn.common/#nfn.common.network_spec_from_wsfeat
   - nfn.layers:
-    - NPPool: /nfn.layers/#nfn.layers.NPPool
-    - HNPPool: /nfn.layers/#nfn.layers.HNPPool
-    - Pointwise: /nfn.layers/#nfn.layers.Pointwise
-    - NPLinear: /nfn.layers/#nfn.layers.NPLinear
-    - HNPLinear: /nfn.layers/#nfn.layers.HNPLinear
+    - NPPool: /nfn-docs/nfn.layers/#nfn.layers.NPPool
+    - HNPPool: /nfn-docs/nfn.layers/#nfn.layers.HNPPool
+    - Pointwise: /nfn-docs/nfn.layers/#nfn.layers.Pointwise
+    - NPLinear: /nfn-docs/nfn.layers/#nfn.layers.NPLinear
+    - HNPLinear: /nfn-docs/nfn.layers/#nfn.layers.HNPLinear
 
 
 repo_url: https://github.com/AllanYangZhou/nfn/
